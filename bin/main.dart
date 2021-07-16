@@ -1,20 +1,14 @@
 class Human {
-  late String name;
-  late int balance;
+  final String name;
+   int balance;
 
   void pay({required int ammount, required Human to}) {
     balance = balance - ammount;
     to.balance = to.balance + ammount;
   }
 
-  Human(String name, int balance) {
-    this.name = name;
-    this.balance = balance;
-  }
+  Human(this.name, this.balance);
 }
-
-
-
 
 void main() {
   Human sakil = Human("Sakil", 10000);
@@ -28,5 +22,10 @@ void main() {
   print("After payment");
   print("Sakil has ${sakil.balance}");
   print("Jahangir has ${jahangir.balance}");
-}
 
+  // sakil.name = "Manik";         ///Final properties can't be assigned more than once
+  // print("Name is ${sakil.name}");  
+  sakil.balance = 1500000;
+  print("Balance is ${sakil.balance}");
+
+}
